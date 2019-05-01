@@ -1,15 +1,17 @@
 $(document).ready(function () {
-    
-var computerPick = 0;
-var finalNumber = 0;
-var hexagonNumber = 0;
-var diamondNumber = 0;
-var octagonNumber = 0;
-var squareNumber = 0;
+
+    var computerPick = 0;
+    var finalNumber = 0;
+    var hexagonNumber = 0;
+    var diamondNumber = 0;
+    var octagonNumber = 0;
+    var squareNumber = 0;
+    var wins = 0;
+    var losses = 0;
     function initializeReset() {
-    
+
         finalNumber = 0;
-        
+
         hexagonNumber = Math.floor(Math.random() * 13);
         diamondNumber = Math.floor(Math.random() * 13);
         octagonNumber = Math.floor(Math.random() * 13);
@@ -17,45 +19,55 @@ var squareNumber = 0;
         computerPick = Math.floor(Math.random() * 121);
         $("#computer-pick").text(computerPick);
         $("#final-number").text(finalNumber);
-        console.log("initializeReset");
+        $("#total-wins").text("Wins = " + wins);
+        $("#total-losses").text("Losses = " + losses);
+        // console.log("initializeReset");
 
         $("#random-button-1").attr("value", hexagonNumber);
         $("#random-button-2").attr("value", diamondNumber);
         $("#random-button-3").attr("value", octagonNumber);
         $("#random-button-4").attr("value", squareNumber);
-        // $("#final-number, #computer-pick, #status").empty();
+
         $(".crystal-button").unbind().on("click", function () {
             var numberValue = parseInt($(this).attr('value'));
 
-            console.log("hexagonNumber = " + hexagonNumber);
+            // console.log("hexagonNumber = " + hexagonNumber);
             finalNumber = finalNumber + numberValue;
-            console.log("AFTER CLICK ---" + " hexagonNumber = " + hexagonNumber + "  diamondNumber = " + diamondNumber + "  octagonNumber = " + octagonNumber + "  squareNumber = " + squareNumber);
+            // console.log("AFTER CLICK ---" + " hexagonNumber = " + hexagonNumber + "  diamondNumber = " + diamondNumber + "  octagonNumber = " + octagonNumber + "  squareNumber = " + squareNumber);
             $("#final-number").text(finalNumber);
 
             if (finalNumber === computerPick) {
                 $("#status").text("You Won!");
-                $(this).unbind().click(function(){
-                    initializeReset();
-                })
+                wins = wins + 1;
+                $("#total-wins").text("Wins = " + wins);
+                initializeReset();
+
+                // $(this).unbind().click(function () {
+                //     initializeReset();
+                // })
             }
             else if (finalNumber > computerPick) {
                 $("#status").text("You Lose!");
-                $(this).unbind().click(function(){
-                    initializeReset();
-                })
+                losses = losses + 1;
+                $("#total-losses").text("Losses = " + losses);
+                initializeReset();
+
+                // $(this).unbind().click(function () {
+                //     initializeReset();
+                // })
             }
 
 
-    });
-}
+        });
+    }
 
-initializeReset();
-// var randomTwo = Math.floor(Math.random() * 10);
-console.log("hexagonNumber = " + hexagonNumber + "  diamondNumber = " + diamondNumber + "  octagonNumber = " + octagonNumber + "  squareNumber = " + squareNumber);
-console.log("computerPick = " + computerPick);
+    initializeReset();
+    // var randomTwo = Math.floor(Math.random() * 10);
+    // console.log("hexagonNumber = " + hexagonNumber + "  diamondNumber = " + diamondNumber + "  octagonNumber = " + octagonNumber + "  squareNumber = " + squareNumber);
+    // console.log("computerPick = " + computerPick);
 
 
-    
+
 });
 
 // $(document).ready(function () {
