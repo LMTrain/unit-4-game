@@ -17,7 +17,7 @@
     color:  rgb(26, 70, 167);
     font-size: 18px;
     margin:1px;
-    height: 360px;
+    height: 380px;
     margin-top: 5px;
 }
 
@@ -45,7 +45,7 @@
 
 .contents-r4-c1 {
     /* border: 4px dotted white; */
-    background: white;
+    background: rgb(22, 87, 173);
     font-family: 'Arial Narrow';
     text-align:center;
     margin:1px;
@@ -55,7 +55,7 @@
 
 .contents-r4-c2 {
     /* border: 4px dotted white; */
-    background: white;
+    background: rgb(22, 87, 173);
     font-family: 'Arial Narrow';
     text-align:center;
     margin:1px;
@@ -65,7 +65,7 @@
 
 .contents-r4-c3 {
    /* border: 4px dotted white; */
-   background: white;
+   background: rgb(22, 87, 173);
    font-family: 'Arial Narrow';
    text-align:center;
    margin:1px;
@@ -75,7 +75,7 @@
 
 .contents-r4-c4 {
     /* border: 4px dotted white; */
-    background: white;
+    background: rgb(55, 110, 184);
     font-family: 'Arial Narrow';
     text-align:center;
     margin:1px;
