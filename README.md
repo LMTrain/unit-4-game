@@ -5,3 +5,7 @@ The user is given a random number at the start of the game. There are four cryst
 
 #### Web Developer
 The web developer for this game is LAYCON MURIZQ
+
+Github Repository Link : https://github.com/LMTrain/unit-4-game.git
+
+Deployed Link : https://lmtrain.github.io/crystalsgame/
